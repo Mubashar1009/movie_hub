@@ -1,0 +1,13 @@
+.autoCompleted ::placeholder {
+  font-size: 14px;
+}
+.autoCompleted:enabled:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+.p-inputtext:enabled:focus {
+  box-shadow: none;
+}
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  padding: 0;
+}
