@@ -1,0 +1,33 @@
+.componentContainer {
+  height: 80px;
+  border: 0.5px solid #d9d9d9;
+}
+.containerImage {
+  width: 80px;
+  height: 50px;
+}
+.ellipse {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 10px;
+}
+@media (min-width: 375px) {
+  .componentContainer {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border: 0.5px solid #d9d9d9;
+    padding: 2px;
+    font-size: 6px;
+  }
+}
+/* @media (min-width: 425px) {
+  .componentContainer {
+    height: 70px;
+    border: 0.5px solid #d9d9d9;
+  }
+} */

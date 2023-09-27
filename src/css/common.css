@@ -1,0 +1,48 @@
+/* .commonMovieCardContainer {
+  width: 203px;
+  height: 200px;
+} */
+.showMoreButton {
+  width: 83px;
+  height: 22px;
+}
+.navLink {
+  background-color: lightblue;
+
+  padding: 0.5rem;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+}
+.navButton {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+}
+/* @media (max-width: 768px) {
+  .commonMovieCardContainer {
+    width: 225px;
+    height: 200px;
+  }
+}
+
+} */
+@media (min-width: 425px) {
+  .commonMovieCardContainer {
+    width: 100%;
+    height: 200px;
+  }
+}
+@media (min-width: 1024px) {
+  .commonMovieCardContainer {
+    width: 45%;
+    height: 200px;
+  }
+}
+@media (min-width: 1240px) {
+  .commonMovieCardContainer {
+    width: 32%;
+    height: 200px;
+  }
+}
