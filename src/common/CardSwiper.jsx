@@ -16,11 +16,12 @@ export const CardSwiper = ({ data }) => {
   return (
     <Swiper
       breakpoints={{
-        425: { slidesPerView: 1 },
-        1024: { slidesPerView: 2 },
-        1240: { slidesPerView: 3 },
+        375: { spaceBetween: 15,slidesPerView:1.5 },
+        576: { spaceBetween: 30,slidesPerView:2 },
+        768: { spaceBetween: 15,slidesPerView:1.5 },
+        1240: { spaceBetween: 15,slidesPerView:3}
       }}
-      spaceBetween={30}
+      
       pagination={{
         clickable: true,
       }}
@@ -28,11 +29,12 @@ export const CardSwiper = ({ data }) => {
       className="mySwiper"
       autoplay
     >
-      {data.map((movieItem) => {
+      {data.map((movieItem, i) => {
         if (movieItem?.poster_path !== null) {
           return (
             <SwiperSlide
-              className="p-4 bg-cover"
+            key={i}
+              className="p-4 bg-cover border-round-xl"
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/original${movieItem.poster_path})`,
               }}

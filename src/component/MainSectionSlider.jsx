@@ -29,24 +29,25 @@ export default function MainSection() {
           className=" mySwiper border-round-xl "
           autoplay
         >
-          {data.results?.map((movieItem) => {
+          {data.results?.map((movieItem,i) => {
             return (
               <SwiperSlide
+              key={i}
                 style={{
                   backgroundImage: `url(https://image.tmdb.org/t/p/original${movieItem.poster_path})`,
                   backgroundSize: "cover",
                 }}
               >
                 <Link to={`/detail/${movieItem.id}`} className="no-underline">
-                  <div className="flex flex-column justify-content-end align-items-start p-3 h-full ">
+                  <div className="flex gap-1 flex-column justify-content-end align-items-start p-3 h-full ">
                     <h4 className="font-bold text-base text-white">
                       {movieItem.title}
                     </h4>
-                    <p className="text-sm text-start text-white">
+                    <p className="text-sm text-start text-white categoryEllipse">
                       {movieItem.overview}
                     </p>
                     <button
-                      className=" border-none
+                      className=" button border-1
            p-2
            text-base
            border-round-md

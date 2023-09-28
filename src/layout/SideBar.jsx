@@ -1,29 +1,35 @@
-import React from "react";
+import {React,useState} from "react";
 
 import { Card } from "primereact/card";
 import { Link } from "react-router-dom";
-// \enhance this with links
+
 export const SideBar = () => {
+ const [active,setActive] = useState("Home");
   return (
-    <Card class=" sm:w-3 lg:w-2 sm:block sidebarCard">
-      <ul className="list-none flex flex-column gap-3   ml-2 border-round-lg h-15rem">
-        <Link to="/" className="no-underline text-900">
-          <li className="  p-2 border-green-100 border-round-3xl border-1  text-grey-400 lg:text-sm sm:text-xs sidebarText    ">
+    <Card className="  sm:block  sm:w-4 md:w-3 lg:w-2 shadow-1 align-self-start sidebarCard  ">
+      <ul className="list-none flex flex-column gap-3 justify-content-center  p-2  border-round-lg h-15rem">
+       
+          <li className={` ${active==="Home"?"surface-900":"transparent"}  surface-border border-round-3xl border-1  text-grey-400 lg:text-sm sm:text-xs sidebarText    `}>
+          <Link to="/" className={`${active==="Home"?"text-white":"text-900"} no-underline block  p-2`} onClick={()=>setActive("Home")}>
             Home
+            </Link>
           </li>
-        </Link>
-        <Link to="/top_rated" className="no-underline text-900">
+        
+
           <li
-            className={` border-round-3xl border-1 border-green-100 p-2 border-round text-grey-400 lg:text-sm  sm:text-xs sidebarText      `}
+            className={`  ${active==="topRated"?"surface-900":"transparent"}  border-round-3xl border-1 surface-border   border-round text-grey-400 lg:text-sm  sm:text-xs sidebarText      `}
           >
-            Top Rated Movies
+             <Link to="/top_rated" className={` ${active==="topRated"?"text-white":"text-900"} no-underline text-900 block p-2 `} onClick={()=>{setActive("topRated")}}>  Top Rated Movies</Link>
+          
           </li>
-        </Link>
-        <Link to="/upcoming" className="no-underline text-900">
-          <li className=" border-round-3xl border-1 border-green-100  p-2 border-round lg:text-sm text-grey-400 sm:text-xs sidebarText   ">
+     
+     
+          <li className={`${active==="upcoming"?"surface-900":"transparent"} border-round-3xl border-1 surface-border  border-round lg:text-sm text-grey-400 sm:text-xs sidebarText   `}>
+          <Link to="/upcoming" className={`${active==="upcoming"?"text-white":"text-900"} no-underline text-900 block  p-2`} onClick={()=>setActive("upcoming")}>
             Upcoming Movies
+            </Link>
           </li>
-        </Link>
+       
       </ul>
     </Card>
   );
