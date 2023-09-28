@@ -21,22 +21,24 @@ export const Cast = () => {
     <Progress />
   ) : (
     <Swiper
-      breakpoints={{
-        425: { slidesPerView: 1 },
-        1024: { slidesPerView: 2 },
-        1440: { slidesPerView: 3 },
-      }}
-      // slidesPerView={3}
-      spaceBetween={30}
+    breakpoints={{
+      375: { spaceBetween: 15,slidesPerView:1.5 },
+      576: { spaceBetween: 30,slidesPerView:2 },
+      768: { spaceBetween: 15,slidesPerView:1.5 },
+      1240: { spaceBetween: 15,slidesPerView:3}
+    }}
+   
+     
       modules={[Autoplay]}
       className="mySwiper"
       autoplay
     >
-      {data.cast.map((movieItem) => {
+      {data.cast.map((movieItem,i) => {
         if (movieItem?.profile_path !== null) {
           return (
             <SwiperSlide
               className="flex flex-column justify-content-end p-4  bg-cover border-round  "
+              key={i}
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/original${movieItem.profile_path})`,
               }}

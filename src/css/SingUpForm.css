@@ -1,3 +1,7 @@
+.button {
+  background-color: black;
+ 
+}
 .signUpContainer {
   height: 400;
   width: 700px;
@@ -15,20 +19,7 @@
 .signUpField:focus {
   box-shadow: none;
 }
-@keyframes rotate {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(-45deg);
-  }
-}
-.movieimage {
-  animation-name: rotate;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
-  animation-duration: 2s;
-}
+
 .inputSearch {
   color: text-grey-400;
 }
@@ -42,7 +33,7 @@
 }
 
 .singUpSection {
-  width: 50vw;
+ 
   animation-name: singUpAnimation;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -56,20 +47,7 @@
   }
 }
 .p-dialog .p-dialog-header {
-  padding: 2px;
+  padding: 6px;
+  box-shadow: none;
 }
-@media (min-width: 375px) {
-  .signUpContainer {
-    flex-direction: column;
-  }
-  .signUpContainer img,
-  .signUpContainer > div {
-    width: 100%;
-  }
-  .signUpTextHeading {
-    font-size: 14px;
-  }
-  .signUpTextParagraph {
-    font-size: 10px;
-  }
-}
+

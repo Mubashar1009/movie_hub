@@ -5,8 +5,8 @@ import { Progress } from "../common/ProgressSpinner";
 export const TopRated = () => {
   const { data, isLoading } = useTopRatedQuery();
   return (
-    <div className="mt-2">
-      <h3 className="text-left">TopRated</h3>
+    <div className="mt-4 mb-3 ">
+      <h3 className="text-left mb-3">TopRated</h3>
       {isLoading ? <Progress /> : <CardSwiper data={data.results} />}
     </div>
   );

@@ -34,7 +34,9 @@ export const CommonMovieCard = ({ data, title = null, day = null }) => {
                 navigate("/trending/week");
               }}
               className={`${
-                days === "week" ? "navLink" : "navButton"
+                days === "week"
+                  ? "navLink border-round-right-2xl border-noround-left"
+                  : "navButton"
               }  no-underline  cursor-pointer w-6  px-2`}
             >
               Week
@@ -42,13 +44,14 @@ export const CommonMovieCard = ({ data, title = null, day = null }) => {
           </div>
         )}
       </div>
-      <Card className="  px-2  ">
-        <div className="flex gap-3 flex-wrap   ">
-          {data?.results.map((movieItem) => {
+      <Card className="  px-3  ">
+        <div className="flex sm:gap-3 lg:gap-4 xl:gap-5 flex-wrap  md:justify-content-center lg:justify-content-start commonDiv  ">
+          {data?.results.map((movieItem,i) => {
             if (movieItem.poster_path !== null) {
               return (
                 <div
                   className="commonMovieCardContainer bg-cover border-round-xl "
+                  key={i}
                   style={{
                     backgroundImage: `url(https://image.tmdb.org/t/p/original${movieItem.poster_path})`,
                   }}

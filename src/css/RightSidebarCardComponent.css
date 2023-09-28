@@ -1,9 +1,6 @@
-.componentContainer {
-  height: 80px;
-  border: 0.5px solid #d9d9d9;
-}
+
 .containerImage {
-  width: 80px;
+  width: 50px;
   height: 50px;
 }
 .ellipse {
@@ -19,15 +16,15 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 120px;
     border: 0.5px solid #d9d9d9;
     padding: 2px;
     font-size: 6px;
   }
 }
-/* @media (min-width: 425px) {
+@media (min-width: 768px) {
   .componentContainer {
     height: 70px;
     border: 0.5px solid #d9d9d9;
   }
-} */
+}

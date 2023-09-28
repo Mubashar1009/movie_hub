@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import "./../css/SingUpForm.css";
 import { Dialog } from "primereact/dialog";
 import { Image2 } from "../images/image";
+
+
 const initialValues = {
   name: "",
   email: "",
@@ -30,21 +32,22 @@ export const SignUpForm = () => {
   return (
     <>
       <button
-        className=" button border-none p-2 border-none text-white  text-base border-round-md cursor-pointer "
+        className=" button border-1 px-2 border-none text-white  text-xs h-2rem border-round-md cursor-pointer "
         onClick={() => setVisible(true)}
       >
         Sign Up
       </button>
+     
       <Dialog visible={visible} onHide={() => setVisible(false)}>
-        <div className="singUpSection flex justify-content-center align-items-center">
-          <section className="flex bg-white signUpContainer md:flex-row ">
+        <div className=" signUpSection flex justify-content-center align-items-center">
+          <section className="flex  p-1 gap-1 bg-white signUpContainer md:flex-row ">
             <img
               src={Image2}
-              className="signUpImage md:w-6"
+              className="signUpImage sm:w-6"
               alt="A Working Man Pic"
             />
 
-            <div className=" md:w-6 flex flex-column justify-content-center gap-2">
+            <div className=" sm:w-6  flex flex-column justify-content-center gap-2">
               <h3 className="text-900 md:text-md lg:text-base text-center signUpTextHeading  ">
                 Join Community
               </h3>
@@ -62,50 +65,50 @@ export const SignUpForm = () => {
                 {({ errors, touched }) => {
                   return (
                     <Form className="flex flex-column gap-2 mx-2  ">
-                      <div>
+                      <div className="h-3rem">
                         <Field
                           name="name"
                           placeholder="Enter Your Name"
-                          className="p-2 w-12 text-teal-900 singUpField border-red   border-round-sm"
+                          className="p-2 w-12 text-teal-900 singUpField border-1 border-solid border-500  border-round-sm"
                         />
                         {touched.name && errors.name && (
-                          <p className="text-red-900">{errors.name}</p>
+                          <p className="text-black-alpha-30 text-xs">{errors.name}</p>
                         )}
                       </div>
 
-                      <div>
+                      <div className="h-3rem">
                         <Field
                           name="email"
                           type="email"
                           placeholder="Enter Your Email"
-                          className="p-2 w-12 text-teal-900  singUpField border-round-sm "
+                          className="p-2 w-12 text-teal-900  singUpField border-1 border-solid border-500  border-round-sm "
                         />
                         {touched.email && errors.email && (
-                          <p className="text-red-900">{errors.email}</p>
+                          <p className="text-black-alpha-30 text-xs">{errors.email}</p>
                         )}
                       </div>
 
-                      <div>
+                      <div className="h-3rem">
                         <Field
                           name="password"
                           type="password"
                           placeholder="Enter Your Password"
-                          className="p-2 w-12 text-teal-900 singUpField border-round-sm  "
+                          className="p-2 w-12 text-teal-900 singUpField border-1 border-solid border-500  border-round-sm  "
                         />
                         {touched.password && errors.password && (
-                          <p className="text-red-900">{errors.password}</p>
+                          <p className="text-black-alpha-30 text-xs">{errors.password}</p>
                         )}
                       </div>
 
-                      <div>
+                      <div className="h-3rem">
                         <Field
                           name="confirmPassword"
                           type="password"
                           placeholder="Confirm Password"
-                          className="p-2 w-12 text-teal-900 singUpField border-round-sm  "
+                          className="p-2 w-12 text-teal-900 singUpField border-1 border-solid border-500  border-round-sm  "
                         />
                         {touched.confirmPassword && errors.confirmPassword && (
-                          <p className="text-red-900">
+                          <p className="text-black-alpha-30 text-xs">
                             {errors.confirmPassword}
                           </p>
                         )}
@@ -113,7 +116,7 @@ export const SignUpForm = () => {
 
                       <input
                         type="submit"
-                        className="p-2 w-12 surface-600  border-none border-round-md text-white "
+                        className="p-2 w-12 surface-600  border-none border-round-md border-1 border-solid border-500  text-white "
                       ></input>
                     </Form>
                   );
@@ -123,6 +126,8 @@ export const SignUpForm = () => {
           </section>
         </div>
       </Dialog>
+    
+     
     </>
   );
 };

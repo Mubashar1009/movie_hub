@@ -11,18 +11,20 @@ import { Popular } from "../component/Popular";
 import { Trending } from "../component/Trending";
 export const MoviesRoutes = () => {
   return (
-    <MainLayout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/top_rated" element={<TopRatedPage />} />
-        <Route path="/upcoming" element={<UpcomingMoviesPage />} />
-        <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/castdetail/:id" element={<CastDetail />} />
-        <Route path="/latest" element={<Latest />} />
-        <Route path="/popular" element={<Popular />} />
-        <Route path="/trending/:day" element={<Trending />} />
-      </Routes>
-    </MainLayout>
+    <>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/top_rated" element={<TopRatedPage />} />
+          <Route path="/upcoming" element={<UpcomingMoviesPage />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/castdetail/:id" element={<CastDetail />} />
+          <Route path="/latest" element={<Latest />} />
+          <Route path="/popular" element={<Popular />} />
+          <Route path="/trending/:day" element={<Trending />} />
+        </Routes>
+      </MainLayout>
+    </>
   );
 };
 //

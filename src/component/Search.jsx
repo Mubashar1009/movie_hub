@@ -21,8 +21,8 @@ export const Search = () => {
     const dataItems = movieItems.filter((item) =>
       item.title.toLowerCase().startsWith(event.query.toLowerCase())
     );
-    const movies = dataItems.map((item) => (
-      <div className="flex  border-50">
+    const movies = dataItems.map((item,i) => (
+      <div className="flex  border-50" key={i}>
         <Link
           to={`/detail/${item.id}`}
           className="w-full text-900 no-underline px-4 py-2 "
@@ -37,7 +37,7 @@ export const Search = () => {
 
   return (
     <AutoComplete
-      className="autoCompleted border-round-3xl  "
+      className="autoCompleted border-round-3xl h-2rem "
       value={value}
       suggestions={items}
       completeMethod={search}
