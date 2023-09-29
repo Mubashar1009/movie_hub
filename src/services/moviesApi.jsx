@@ -84,6 +84,13 @@ export const MoviesApi = createApi({
         headers:header
       }),
     }),
+    searchMovies: builder.query({
+      query: (data) => ({
+        url: `https://api.themoviedb.org/3/search/movie?query=${data}&include_adult=false&language=en-US&page=1`,
+        method: method,
+        headers:header
+      }),
+    }),
   }),
 });
 export const {
@@ -97,5 +104,6 @@ export const {
   useCastDetailQuery,
   usePopularMoviesQuery,
   useTrendingMoviesQuery,
+  useSearchMoviesQuery,
 } = MoviesApi;
 //
