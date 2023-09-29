@@ -1,31 +1,34 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import { AutoComplete } from "primereact/autocomplete";
-import { useReleasedMoviesQuery } from "../services/moviesApi";
+import { useSearchMoviesQuery } from "../services/moviesApi";
 import "./../css/autoComplete.css";
 export const Search = () => {
+ 
   const [value, setValue] = useState("");
   const [items, setItems] = useState(null);
-  const { data, isLoading } = useReleasedMoviesQuery();
+  const [movie,setMovie] = useState("");
+  const { data, isLoading } = useSearchMoviesQuery(movie);
 
   const handleInputChange = (e) => {
     if (typeof e.value === "string") {
       setValue(e.value);
     } else {
-      // console.log(e.value.props.children.props.children);
+
       setValue("");
     }
   };
   const search = (event) => {
-    const movieItems = data?.results;
-    const dataItems = movieItems.filter((item) =>
-      item.title.toLowerCase().startsWith(event.query.toLowerCase())
-    );
-    const movies = dataItems.map((item,i) => (
-      <div className="flex  border-50" key={i}>
+        setMovie(event.query);
+    // const movieItems = data?.results;
+    // const dataItems = movieItems.filter((item) =>
+    //   item.title.toLowerCase().startsWith(event.query.toLowerCase())
+    // );
+    const movies = data?.results.map((item,i) => (
+      <div className="flex  border-50" style={{width:"180px"}} key={i}>
         <Link
           to={`/detail/${item.id}`}
-          className="w-full text-900 no-underline px-4 py-2 "
+          className="w-full text-900 no-underline px-4 py-2 white-space-normal "
         >
           {item.title}
         </Link>
