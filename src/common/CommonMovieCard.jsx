@@ -45,7 +45,7 @@ export const CommonMovieCard = ({ data, title = null, day = null }) => {
         )}
       </div>
       <Card className="  px-3  ">
-        <div className="flex sm:gap-3 lg:gap-4 xl:gap-5 flex-wrap  md:justify-content-center lg:justify-content-start commonDiv  ">
+        <div className="flex sm:gap-3 lg:gap-4  flex-wrap  md:justify-content-center lg:justify-content-start commonDiv  ">
           {data?.results.map((movieItem,i) => {
             if (movieItem.poster_path !== null) {
               return (
